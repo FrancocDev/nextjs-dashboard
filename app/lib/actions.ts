@@ -119,3 +119,17 @@ export async function authenticate(
         throw error;
     }
 }
+
+export async function clearDB() {
+    try{
+        await sql`DELETE FROM invoices`
+        await sql`DELETE FROM customers`
+        await sql`DELETE FROM revenue`
+
+    } catch (error){
+        console.log(error)
+        return {
+            message: 'Database error: Failed to clear database'
+        }
+    }
+}
