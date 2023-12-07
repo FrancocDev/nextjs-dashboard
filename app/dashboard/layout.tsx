@@ -2,7 +2,10 @@ import SideNav from '@/app/ui/dashboard/sidenav';
 import { Metadata } from 'next'; 
 
 export const meta: Metadata = {
-  title: 'Dashboard',
+  title: {
+    template: '%s | Dashboard',
+    default: 'Dashboard'
+  },
   description: 'NExt.js Course Dashboard',
   metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
 };
